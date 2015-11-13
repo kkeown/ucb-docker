@@ -9,10 +9,10 @@ ENV JAVA_URL $ARTIFACT_REPO/$JAVA_TAR
 ENV IBM_UCB_SECURE true
 
 RUN set -x \
-    && yum update -y \
-    && yum -y install tar \
-    && yum -y install unzip \
-    && yum -y install openssh-clients \
+    && yum -y --quiet update \
+    && yum -y --quiet install tar \
+    && yum -y --quiet install unzip \
+    && yum -y --quiet install openssh-clients \
     && yum clean packages
 
 RUN set -x \
