@@ -32,7 +32,7 @@ COPY installtools/ /installtools/
 RUN set -x \
     && /installtools/install_ucb.sh $UCB_SERVER_URL \
     && rm -f /$UCB_SERVER.zip
- 
+    
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["server", "run"]
